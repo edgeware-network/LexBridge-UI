@@ -99,7 +99,7 @@ export default function Members({ setStep }: Props) {
                 defaultValue={item.member}
                 type="text"
               />
-              <Input
+              {/* <Input
                 label="Tokens"
                 hideLabel={index !== 0}
                 id="share"
@@ -109,7 +109,7 @@ export default function Members({ setStep }: Props) {
                   min: 1,
                 })}
                 defaultValue={item.share}
-              />
+              /> */}
               <Button
                 tone="red"
                 variant="secondary"
