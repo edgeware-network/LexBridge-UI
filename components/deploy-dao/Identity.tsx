@@ -84,24 +84,6 @@ export default function Identity({ setStep }: Props) {
           })}
           error={errors?.name?.message}
         />
-        <Input
-          label="Symbol"
-          placeholder="KCO"
-          prefix="$"
-          textTransform="uppercase"
-          defaultValue={state.symbol === '' ? undefined : state.symbol}
-          {...register('symbol', {
-            required: {
-              value: true,
-              message: 'Symbol is required.',
-            },
-            maxLength: {
-              value: 11,
-              message: 'Max symbol length exceeded',
-            },
-          })}
-          error={errors?.symbol?.message}
-        />
         <Stack direction={'horizontal'} justify="space-between">
           <Tutorial />
           <Button variant="primary" type="submit">
