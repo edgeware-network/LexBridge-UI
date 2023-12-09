@@ -76,8 +76,6 @@ export default function DeployDaoWrapper() {
     {
       component: <Members setStep={setStep} />,
       title: 'Founding Members',
-      description: `If a new founding member is added, we must specify a KaliDAO token
-      amount.`,
     },
     {
       component: <Legal setStep={setStep} />,
