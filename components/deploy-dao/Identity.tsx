@@ -70,7 +70,7 @@ export default function Identity({ setStep }: Props) {
     <Box as="form" onSubmit={handleSubmit(onSubmit)}>
       <FieldSet
         legend="Token"
-        description="Your token is the identity of your organization. The token created will be ERC20 compliant."
+        description="Your token is the identity of your organization."
       >
         <Input
           label="Name"
