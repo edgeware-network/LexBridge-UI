@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
-import { useContract, useSigner } from 'wagmi'
+import { getContract, useWalletClient } from 'wagmi'
 import {
   Stack,
   Input,
@@ -30,10 +30,10 @@ export default function SetDataRoom({ setProposal, title, content }: ProposalPro
   const router = useRouter()
   const daoAddress = router.query.dao as string
   const chainId = Number(router.query.chainId)
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
   const dataRoomAddress = addresses[chainId]['extensions']['dataRoom']
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
-import { erc20ABI, useContract, useContractRead, useSigner } from 'wagmi'
+import { erc20ABI, getContract, useContractRead, useWalletClient } from 'wagmi'
 import { Select } from '@design/Select'
 import { Stack, Input, Button, FieldSet, Textarea, Text } from '@kalidao/reality'
 import FileUploader from '@components/tools/FileUpload'
@@ -23,7 +23,7 @@ export default function SetSwap({ setProposal, title, content }: ProposalProps) 
   const router = useRouter()
   const daoAddress = router.query.dao as string
   const chainId = Number(router.query.chainId)
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
   const crowdsaleAddress = addresses[chainId]['extensions']['crowdsale2']
 
   const { data: kalidaoToken } = useContractRead({
@@ -33,13 +33,13 @@ export default function SetSwap({ setProposal, title, content }: ProposalProps) 
     chainId: Number(chainId),
   })
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress as `0xstring`,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,
   })
 
-  const kaliAccess = useContract({
+  const kaliAccess = getContract({
     address: addresses[chainId]['access2'] as `0xstring`,
     abi: KALIACCESS_ABI,
     signerOrProvider: signer,

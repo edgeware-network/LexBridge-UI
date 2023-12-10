@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
-import { erc20ABI, useContract, useContractRead, useSigner } from 'wagmi'
+import { erc20ABI, useContractRead, useWalletClient } from 'wagmi'
+import { getContract } from 'wagmi/actions'
 import { Select } from '@design/Select'
 import { Stack, Input, Text, Button, FieldSet, Textarea, Checkbox } from '@kalidao/reality'
 import FileUploader from '@components/tools/FileUpload'
@@ -22,10 +23,10 @@ export default function RemoveSwap({ setProposal, title, content }: ProposalProp
   const router = useRouter()
   const daoAddress = router.query.dao as string
   const chainId = Number(router.query.chainId)
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
   const crowdsaleAddress = addresses[chainId]['extensions']['crowdsale2']
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress as `0xstring`,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,

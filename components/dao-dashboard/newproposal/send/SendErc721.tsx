@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useContractRead, useSigner, erc721ABI, useContractWrite } from 'wagmi'
+import { useContractRead, useWalletClient, erc721ABI, useContractWrite } from 'wagmi'
 import { Stack, Text, Input } from '@kalidao/reality'
 import { Warning } from '@design/elements'
 import { ethers } from 'ethers'
@@ -19,7 +19,7 @@ export default function SendErc721({ setProposal, title, content }: ProposalProp
     functionName: 'name',
     chainId: Number(chainId),
   })
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
 
   const {
     write: propose,

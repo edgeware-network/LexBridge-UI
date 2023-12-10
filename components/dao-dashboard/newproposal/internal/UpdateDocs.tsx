@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useContract, useContractRead, useSigner } from 'wagmi'
+import { getContract, useContractRead, useWalletClient } from 'wagmi'
 import { Warning } from '@design/elements'
 import { Stack, Text, Button, FieldSet, Divider, Input, IconLink, Spinner } from '@kalidao/reality'
 import FileUploader from '@components/tools/FileUpload'
@@ -15,9 +15,9 @@ export default function UpdateDocs() {
   const router = useRouter()
   const daoAddress = router.query.dao as string
   const daoChain = Number(router.query.chainId)
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
-import { useContract, useSigner } from 'wagmi'
+import { getContract, useWalletClient } from 'wagmi'
 import KALIDAO_ABI from '@abi/KaliDAO.json'
 import { addresses } from '@constants/addresses'
 import { fetchExtensionStatus } from '@utils/fetchExtensionStatus'
@@ -19,11 +19,11 @@ export default function SetRedemption({ setProposal, title, content }: ProposalP
   const router = useRouter()
   const daoAddress = router.query.dao as string
   const daoChainId = Number(router.query.chainId)
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
   const redemptionAddress = addresses[daoChainId]['extensions']['redemption']
   const tokenArray = getRedemptionTokens(daoChainId)
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,

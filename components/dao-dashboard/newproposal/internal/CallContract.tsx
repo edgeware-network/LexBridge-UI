@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useContract, useSigner } from 'wagmi'
+import { getContract, useWalletClient } from 'wagmi'
 import { Warning } from '@design/elements'
 import { Box, Button, Text, Stack, Input, Textarea } from '@kalidao/reality'
 import { Select } from '@design/Select'
@@ -14,9 +14,9 @@ export default function CallContract({ setProposal, title, content }: ProposalPr
   const router = useRouter()
   const daoChainId = Number(router.query.chainId)
   const daoAddress = router.query.dao as string
-  const { data: signer } = useSigner()
+  const { data: signer } = useWalletClient()
 
-  const kalidao = useContract({
+  const kalidao = getContract({
     address: daoAddress as string,
     abi: KALIDAO_ABI,
     signerOrProvider: signer,
