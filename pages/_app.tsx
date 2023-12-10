@@ -7,7 +7,7 @@ import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { mainnet, optimism, polygon, arbitrum, gnosis, goerli } from 'wagmi/chains'
+import { mainnet, optimism, polygon, arbitrum, gnosis, goerli, baseSepolia } from 'wagmi/chains'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import NextNProgress from 'nextjs-progressbar'
 import { ThemeProvider } from '@kalidao/reality'
@@ -19,7 +19,7 @@ import '@design/app.css'
 const queryClient = new QueryClient()
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet, polygon, arbitrum, optimism, gnosis, goerli],
+  [mainnet, polygon, arbitrum, optimism, gnosis, goerli, baseSepolia],
   [
     infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURA_ID ?? '' }),
     jsonRpcProvider({

@@ -105,4 +105,19 @@ export const addresses: { [key: number]: any } =
       },
       blockExplorer: 'https://goerli.etherscan.io/',
     },
+    //Base Sepolia Testnet
+84532: {
+  name: 'baseSepolia',
+  factory: '0xa655F2631b55896e10Ecd26934584124b4ba8493',
+  access2: '0x5421832836aA75556fA5a66c0Ac77e6f7FFeD3d4',
+  extensions: {
+    tribute: '0x9D3f8B9C605347bD519660523275ef618c7D1E09',
+    crowdsale2: '0xe0D1c854651b9Ba015625542630B7332B8557D71',
+    redemption: '0xf6f8aeAE318D7B251f8f3126dD791b5742A137D6',
+    dataRoom: '0x87c40bbA4e7587f7CD3f47Def43df6817a2C5C47',
+  },
+  kaliMaster: '0x68F446aFC78819d6F4486aB82257cdfF057F65aC',
+  ricardian: '0x0000000000000000000000000000000000000000',
+  blockExplorer: 'https://base-sepolia.blockscout.com/',
+},
   }
