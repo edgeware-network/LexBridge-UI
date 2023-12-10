@@ -19,7 +19,6 @@ export default function CallContract({ setProposal, title, content }: ProposalPr
   const kalidao = getContract({
     address: daoAddress as string,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
 
   // form

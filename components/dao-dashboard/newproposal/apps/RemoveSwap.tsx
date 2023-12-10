@@ -29,7 +29,6 @@ export default function RemoveSwap({ setProposal, title, content }: ProposalProp
   const kalidao = getContract({
     address: daoAddress as `0xstring`,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
 
   const [toggleConfirm, setToggleConfirm] = useState(false)

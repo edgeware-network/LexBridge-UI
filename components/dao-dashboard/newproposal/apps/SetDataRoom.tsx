@@ -36,7 +36,6 @@ export default function SetDataRoom({ setProposal, title, content }: ProposalPro
   const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
 
   // form

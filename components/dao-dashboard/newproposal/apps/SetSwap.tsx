@@ -36,13 +36,11 @@ export default function SetSwap({ setProposal, title, content }: ProposalProps) 
   const kalidao = getContract({
     address: daoAddress as `0xstring`,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
 
   const kaliAccess = getContract({
     address: addresses[chainId]['access2'] as `0xstring`,
     abi: KALIACCESS_ABI,
-    signerOrProvider: signer,
   })
 
   // form

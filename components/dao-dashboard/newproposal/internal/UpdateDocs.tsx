@@ -20,7 +20,6 @@ export default function UpdateDocs() {
   const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
   const { data, isLoading: isFetchingDocs } = useContractRead({
     address: daoAddress as `0xstring`,

@@ -26,7 +26,6 @@ export default function SetRedemption({ setProposal, title, content }: ProposalP
   const kalidao = getContract({
     address: daoAddress,
     abi: KALIDAO_ABI,
-    signerOrProvider: signer,
   })
 
   // form
