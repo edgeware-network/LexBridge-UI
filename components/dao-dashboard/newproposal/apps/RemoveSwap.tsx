@@ -68,7 +68,7 @@ export default function RemoveSwap({ setProposal, title, content }: ProposalProp
     setStatus('Creating proposal...')
     try {
       if (kalidao) {
-        const tx = await kalidao.propose(
+        const tx = await (kalidao as any).propose(
          9, // EXTENSION prop
          docs,
          [crowdsaleAddress],
