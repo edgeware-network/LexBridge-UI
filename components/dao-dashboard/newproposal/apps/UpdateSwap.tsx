@@ -28,14 +28,14 @@ export default function UpdateSwap({ setProposal, title, content }: ProposalProp
   const crowdsaleAddress = addresses[chainId]['extensions']['crowdsale2']
 
   const { data: kalidaoToken } = useContractRead({
-    address: daoAddress as `0xstring`,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
     functionName: 'symbol',
     chainId: Number(chainId),
   })
 
   const kalidao = getContract({
-    address: daoAddress as `0xstring`,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
 

@@ -35,7 +35,7 @@ export default function SetDataRoom({ setProposal, title, content }: ProposalPro
   const dataRoomAddress = addresses[chainId]['extensions']['dataRoom']
 
   const kalidao = getContract({
-    address: daoAddress,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
 

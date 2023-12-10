@@ -18,7 +18,7 @@ export default function CallContract({ setProposal, title, content }: ProposalPr
   const { data: signer } = useWalletClient()
 
   const kalidao = getContract({
-    address: daoAddress as string,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
 

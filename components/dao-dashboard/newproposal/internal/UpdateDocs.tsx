@@ -19,11 +19,11 @@ export default function UpdateDocs() {
   const { data: signer } = useWalletClient()
 
   const kalidao = getContract({
-    address: daoAddress,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
   const { data, isLoading: isFetchingDocs } = useContractRead({
-    address: daoAddress as `0xstring`,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
     functionName: 'docs',
     chainId: daoChain,

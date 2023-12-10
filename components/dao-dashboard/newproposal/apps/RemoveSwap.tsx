@@ -27,7 +27,7 @@ export default function RemoveSwap({ setProposal, title, content }: ProposalProp
   const crowdsaleAddress = addresses[chainId]['extensions']['crowdsale2']
 
   const kalidao = getContract({
-    address: daoAddress as `0xstring`,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
 

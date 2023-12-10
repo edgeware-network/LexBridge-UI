@@ -25,7 +25,7 @@ export default function SetRedemption({ setProposal, title, content }: ProposalP
   const tokenArray = getRedemptionTokens(daoChainId)
 
   const kalidao = getContract({
-    address: daoAddress,
+    address: daoAddress as `0x${string}`,
     abi: KALIDAO_ABI,
   })
 
