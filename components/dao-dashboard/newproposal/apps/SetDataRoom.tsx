@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
-import { getContract, useWalletClient } from 'wagmi'
+import { useWalletClient } from 'wagmi'
+import { getContract } from 'wagmi/actions'
 import {
   Stack,
   Input,

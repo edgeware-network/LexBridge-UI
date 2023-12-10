@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { getContract, useWalletClient } from 'wagmi'
+import { useWalletClient } from 'wagmi'
+import { getContract } from 'wagmi/actions'
 import { Warning } from '@design/elements'
 import { Box, Button, Text, Stack, Input, Textarea } from '@kalidao/reality'
 import { Select } from '@design/Select'

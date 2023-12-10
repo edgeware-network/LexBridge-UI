@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getContract, useContractRead, useWalletClient } from 'wagmi'
+import { useContractRead, useWalletClient } from 'wagmi'
+import { getContract } from 'wagmi/actions'
 import { Warning } from '@design/elements'
 import { Stack, Text, Button, FieldSet, Divider, Input, IconLink, Spinner } from '@kalidao/reality'
 import FileUploader from '@components/tools/FileUpload'
