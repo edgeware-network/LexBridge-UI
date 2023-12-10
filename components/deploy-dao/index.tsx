@@ -52,9 +52,7 @@ export default function DeployDaoWrapper() {
     {
       component: <Identity setStep={setStep} />,
       title: 'Summon',
-      description: `You are about to summon a KaliDAO, an on-chain organization 
-      with a native token and voting mechanism. To get 
-      started, pick a name and symbol for your DAO and Token.`,
+      description: `You are about to summon a LexBridge, an on-chain organization with a native token and voting mechanism. Pick a name to get started!.`,
     },
     {
       component: <Governance setStep={setStep} />,
@@ -78,8 +76,6 @@ export default function DeployDaoWrapper() {
     {
       component: <Members setStep={setStep} />,
       title: 'Founding Members',
-      description: `If a new founding member is added, we must specify a KaliDAO token
-      amount.`,
     },
     {
       component: <Legal setStep={setStep} />,

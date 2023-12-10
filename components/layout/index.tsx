@@ -12,7 +12,7 @@ type LayoutProps = {
 }
 
 export default function Layout({ heading, content, children }: LayoutProps) {
-  const title = `Kali | ${heading}`
+  const title = `LexBridge | ${heading}`
 
   return (
     <Box className={layout}>

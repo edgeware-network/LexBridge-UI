@@ -18,7 +18,7 @@ type Props = {
 const DashboardLayout = ({ title, content, children }: Props) => {
   const router = useRouter()
   const { chainId, dao } = router.query
-  const heading = `Kali | ${title}`
+  const heading = `LexBridge | ${title}`
 
   return (
     <Box className={layout}>

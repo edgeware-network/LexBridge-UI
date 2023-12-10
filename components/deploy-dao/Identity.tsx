@@ -70,7 +70,7 @@ export default function Identity({ setStep }: Props) {
     <Box as="form" onSubmit={handleSubmit(onSubmit)}>
       <FieldSet
         legend="Token"
-        description="Your token is the identity of your organization. The token created will be ERC20 compliant."
+        description="Your token is the identity of your organization."
       >
         <Input
           label="Name"
@@ -83,24 +83,6 @@ export default function Identity({ setStep }: Props) {
             },
           })}
           error={errors?.name?.message}
-        />
-        <Input
-          label="Symbol"
-          placeholder="KCO"
-          prefix="$"
-          textTransform="uppercase"
-          defaultValue={state.symbol === '' ? undefined : state.symbol}
-          {...register('symbol', {
-            required: {
-              value: true,
-              message: 'Symbol is required.',
-            },
-            maxLength: {
-              value: 11,
-              message: 'Max symbol length exceeded',
-            },
-          })}
-          error={errors?.symbol?.message}
         />
         <Stack direction={'horizontal'} justify="space-between">
           <Tutorial />

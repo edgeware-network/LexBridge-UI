@@ -10,7 +10,7 @@ export default function Header() {
     <Box className={header}>
       <Link href="/" passHref>
         <Box as="a" className={logo}>
-          KALI
+          LexBridge
         </Box>
       </Link>
       <Box display={'flex'} gap="2" alignItems={'center'}>

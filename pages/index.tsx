@@ -62,7 +62,6 @@ const HomePage: NextPage = () => {
         </Stack>
       </Box>
       {isConnected && <UserDAOs address={address && (address as string)} />}
-      <FAQ />
     </Layout>
   )
 }

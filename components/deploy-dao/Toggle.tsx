@@ -8,17 +8,6 @@ export default function Toggle() {
   const { hardMode } = state
 
   return (
-    <Button
-      size="small"
-      suffix={hardMode === false ? <IconPlus /> : <IconMinus />}
-      variant="transparent"
-      onClick={() =>
-        actions.updateAction({
-          hardMode: !hardMode,
-        })
-      }
-    >
-      {hardMode === false ? 'Easy' : 'Hard'}
-    </Button>
+    <div></div>
   )
 }

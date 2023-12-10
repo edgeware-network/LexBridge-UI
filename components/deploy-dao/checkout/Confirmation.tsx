@@ -38,7 +38,6 @@ export default function Confirmation() {
         <AccordionTrigger>Token</AccordionTrigger>
         <AccordionContent>
           <Row name="Name" value={state.name} />
-          <Row name="Symbol" value={state.symbol} />
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="gov">
